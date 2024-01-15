@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  testEdu1
-//
-//  Created by Kirill Varshamov on 08.03.2023.
-//
-
 import UIKit
 
 final class ViewController: UIViewController {
@@ -12,13 +5,20 @@ final class ViewController: UIViewController {
     let labelForTest: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "тестовый текст"
+        label.textAlignment = .center
         return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
-        // Добавь лэйбл по центру с текстом "тестовый текст"
+        
+        view.addSubview(labelForTest)
+        
+        NSLayoutConstraint.activate([
+            labelForTest.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            labelForTest.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
 }
